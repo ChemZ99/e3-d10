@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 const WeatherCard = props => {
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={`https://openweathermap.org/img/wn/${currWeather.weather[0].icon}@2x.png`} />
+      <Card.Img variant="top" src={`https://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`} />
       <Card.Body>
         <Card.Title>{props.data.weather[0].description}</Card.Title>
         <Card.Text>{props.data.main.temp} Fahrenheit</Card.Text>

@@ -18,8 +18,8 @@ const ResultsPage = () => {
   const [hasError, setHasError] = useState(false);
   const [hlat, setHlat] = useState(0);
   const [hlon, setHlon] = useState(0);
-  const [currWeather2, setCurrWeather2] = useState({});
-  const [forecast2, setForecast2] = useState({});
+  const [currWeather2, setCurrWeather2] = useState(null);
+  const [forecast2, setForecast2] = useState([]);
 
   const fetchGeoLoc = async () => {
     setIsLoading(true);
@@ -79,8 +79,8 @@ const ResultsPage = () => {
     <Container fluid>
       <Row>
         <Col xs={12}>
-          <h1>Current Weather at ${city}</h1>
-          <WeatherCard data={currWeather} />
+          <h1>Current Weather at {city}</h1>
+          {currWeather2 && <WeatherCard data={currWeather2} />}
         </Col>
         <Col xs={2}></Col>
       </Row>
